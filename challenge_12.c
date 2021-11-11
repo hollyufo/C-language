@@ -1,15 +1,21 @@
-#include <stdio.h>
-int main() {
-    int a; 
-    int reversed = 0;
-    int remainder;
-    printf("Enter an integer: ");
-    scanf("%d", &a);
-    while (a != 0) {
-        remainder = a % 10;
-        reversed = reversed * 10 + remainder;
-        a /= 10;
-    }
-    printf("Reversed number = %d \n", reversed);
+#include<stdio.h>
+
+int reverse(int , int );
+
+int main()
+{
+    int number, result;
+    printf("Enter number: ");
+    scanf("%d", &number);
+    result = reverse(number, 0);
+    printf("Reverse of %d is %d.\n", number, result);
     return 0;
+}
+
+int reverse(int num, int rev)
+{
+    if(num==0)
+        return rev;
+    else
+        return reverse (num/10, rev*10 + num%10);
 }
