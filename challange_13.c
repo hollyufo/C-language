@@ -1,54 +1,26 @@
 #include <stdio.h>
- 
 int main()
 {
-    long decimalnum, remainder, quotient;
-    int octalNumber[100], i = 1, j;
- 
-    printf("Enter the decimal number: ");
-    scanf("%ld", &decimalnum);
-    quotient = decimalnum;
-    while (quotient != 0)
+    int octalNumber[10], number, i, j;
+    printf("\n Please Enter the Number You want to Convert  :  ");
+    scanf("%d", &number);
+    long int decimalNumber;
+    decimalNumber = number;
+
+    for(i = 0; number > 0; i++)
     {
-        octalNumber[i++] = quotient % 8;
-        quotient = quotient / 8;
+        octalNumber[i] = number % 8;
+        number = number / 8;
     }
-    printf("Equivalent octal value of decimal no %d: ", decimalnum);
-    for (j = i - 1; j > 0; j--)
+
+    printf("\n Equivalent Octal Number of a Given Number =  ");
+    for(j = i - 1; j >= 0; j--)
+    {
         printf("%d", octalNumber[j]);
-    return 0;
-}
-#include<stdio.h>
-#include<math.h>
-
-int main()
-{
-    long decimalnum, remainder, quotient;
-    int octalNumber[100], i = 1, j;
-
-    printf("Enter the decimal number: ");
-    scanf("%ld", &decimalnum);
-    quotient = decimalnum;
-    while (quotient != 0)
-    {
-        octalNumber[i++] = quotient % 8;
-        quotient = quotient / 8;
     }
-    printf("Equivalent octal value of decimal no %li\n: ", decimalnum);
-    for (j = i - 1; j > 0; j--)
-        printf("%d", octalNumber[j]);
-            while (quotient != 0)
-    {
-        remainder = quotient % 16;
-        if (remainder < 10)
-            hexadecimalnum[j++] = 48 + remainder;
-        else
-            hexadecimalnum[j++] = 55 + remainder;
-        quotient = quotient / 16;
-    }
-
-    // display integer into character
-    for (i = j; i >= 0; i--)
-            printf("%c", hexadecimalnum[i]);
+    printf("\n");
+    
+	printf("Equivalent hexadecimal number of a Given Number: %lX ",decimalNumber);
+	printf("\n");
     return 0;
 }
