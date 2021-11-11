@@ -2,9 +2,9 @@
 int main() {
     int a, r = 0, rr;
     printf("enter an integer: ");
-    scanf("%d", &n);
+    scanf("%d", &a);
     while (n != 0) {
-        rr = n % 10;
+        rr = a % 10;
         r = rev * 10 + rr;
         a /= 10;
     }
